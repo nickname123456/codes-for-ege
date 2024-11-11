@@ -1,4 +1,4 @@
-f=open('файл').readlines()
+f = open('файл').readlines()
 s=[int(x) for x in f]
 s1=[x for x in s if abs(x)%10==7 and 999<x<10000]
 ma = max(s)
