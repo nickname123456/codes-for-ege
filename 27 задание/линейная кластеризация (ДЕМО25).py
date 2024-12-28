@@ -1,3 +1,5 @@
+from math import dist
+
 clustersA = [[], []]
 clustersB = [[], [], []]
 
@@ -17,17 +19,10 @@ for line in open('27_B_17882.txt'):
     else:
         clustersB[2].append([x, y])
 
-from math import dist
-
-def d(A, B):
-    x1, y1 = A
-    x2, y2 = B
-    return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
-
 def center(cl):
     m = []
     for p in cl:
-        sm = sum(d(p, p1) for p1 in cl)
+        sm = sum(dist(p, p1) for p1 in cl)
         m.append([sm, p])
     return min(m)[1]
 
